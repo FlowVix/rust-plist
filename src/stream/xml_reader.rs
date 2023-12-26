@@ -162,7 +162,7 @@ impl<R: Read> ReaderState<R> {
                                 }
                             }
                         }
-                        b"real" => {
+                        b"real" | b"r" => {
                             let s = self.read_content(buffer)?;
                             match s.parse() {
                                 Ok(f) => return Ok(Some(Event::Real(f))),
